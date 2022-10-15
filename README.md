@@ -14,7 +14,7 @@ This will download the ISO image (if not already in packer's cache) and will bui
 
 You might also want to update var_*.json files first, to the latest versions:
 `
-$ sh update_vars.sh
+$ bash update_vars.sh
 `
 In *utils/config.ign.yml* you'll find a basic machine config file.
 ### Using pre-built boxes
