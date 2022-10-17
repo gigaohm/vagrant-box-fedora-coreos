@@ -137,7 +137,7 @@ build {
   }
   post-processor "vagrant-cloud" {
     access_token = "${var.cloud_token}"
-    box_tag      = "hashicorp/precise64"
+    box_tag      = "gigaohm/fedora-coreos"
     version      = "${var.box_version}"
   }
 }
