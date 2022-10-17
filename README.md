@@ -1,29 +1,40 @@
 # vagrant-box-fedora-coreos
+
 A project for building [Fedora CoreOS](https://getfedora.org/en/coreos?stream=stable) boxes for Vagrant.
+
+Based upon the work from https://github.com/mihailutasu/vagrant-fedora-coreos
 ## Requirements
 - [Packer](https://www.packer.io/)
 - [VirtualBox](https://www.virtualbox.org)
 - [Podman](https://podman.io/) or [Docker](https://www.docker.com/) (or FCCT installed) - to generate your own Ignition files
 - [jq](https://stedolan.github.io/jq/) - if you want to download the latest images of CoreOS
 ## Usage
-To build a box, you need to run packer. Eg.:
-`
-$ packer build -var-file var_stable.json fedora-coreos.json
-`
+To build a box, you need to run packer.
+
+```shell
+packer build -var-file="stable.pkrvars.hcl" fedora-coreos.pkr.hcl
+```
+
 This will download the ISO image (if not already in packer's cache) and will build the box.
 
-You might also want to update var_*.json files first, to the latest versions:
-`
-$ bash update_vars.sh
-`
-In *utils/config.ign.yml* you'll find a basic machine config file.
+You might also want to update `stable.pkrvars.hcl` file first, to the latest versions:
+
+```shell
+bash update_vars.sh
+```
+
+In `utils/config.ign.yml` you'll find a basic machine config file.
 ### Using pre-built boxes
 You can also add the pre-built boxes in Vagrant:
-`
-$ vagrant box add mihailutasu/fedora-coreos-stable
-`
+
+```shell
+vagrant box add mihailutasu/fedora-coreos-stable
+```
+
 ## License
+
 ```text
+Copyright 2022, Gigaohm LLC
 Copyright 2020, Mihai Lutasu
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
