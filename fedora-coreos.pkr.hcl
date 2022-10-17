@@ -128,16 +128,18 @@ build {
       inline = ["echo '{\"os_name\": \"${var.os_name}\", \"release\": \"${var.release}\"}' > ${local.workdirpacker}/info.json"]
     }
   }
-  post-processor "vagrant" {
-    compression_level    = 9
-    include              = ["${local.workdirpacker}/info.json"]
-    output               = "${var.build_directory}/${var.os_name}-${var.release}_{{.Provider}}.box"
-    provider_override    = "virtualbox"
-    vagrantfile_template = "${path.root}/files/vagrantfile"
-  }
-  post-processor "vagrant-cloud" {
-    access_token = "${var.cloud_token}"
-    box_tag      = "gigaohm/fedora-coreos"
-    version      = "${var.box_version}"
+  post-processors {
+    post-processor "vagrant" {
+      compression_level    = 9
+      include              = ["${local.workdirpacker}/info.json"]
+      output               = "${var.build_directory}/${var.os_name}-${var.release}_{{.Provider}}.box"
+      provider_override    = "virtualbox"
+      vagrantfile_template = "${path.root}/files/vagrantfile"
+    }
+    post-processor "vagrant-cloud" {
+      access_token = "${var.cloud_token}"
+      box_tag      = "gigaohm/fedora-coreos"
+      version      = "${var.box_version}"
+    }
   }
 }
