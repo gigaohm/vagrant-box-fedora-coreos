@@ -119,7 +119,7 @@ build {
   post-processor "vagrant" {
     compression_level    = 9
     include              = ["${local.workdirpacker}/info.json"]
-    output               = "${var.build_directory}/${var.os_name}-${var.release}_<no value>.box"
+    output               = "${var.build_directory}/${var.os_name}-${var.release}_{{.Provider}}.box"
     provider_override    = "virtualbox"
     vagrantfile_template = "${path.root}/files/vagrantfile"
   }
