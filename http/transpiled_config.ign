@@ -9,12 +9,12 @@
           "sudo"
         ],
         "name": "vagrant",
-        "passwordHash": "$y$j9T$fCFtUNXFxxJZlrvRF7AoW/$buUFEAm5VRe0gLP4UR8FLBwqhFvtV9kV9uS/M0FP0x."
+        "passwordHash": "$y$j9T$I0.JJh9F1mxbkUYl06AJz1$QWh0OxXVyceoz3qXp7H2r4KmX76nn4F3WRh3Qb.asC1"
       },
       {
         "name": "core",
         "sshAuthorizedKeys": [
-          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpNIhGKpmNvLdRBP6TTjUbv2/PcbLbtmLTfswtrZ+Pxq8yFbrhAnMGovcc0ONvCfJ7aPzJPEqf1L1k4O5KnWH5lozq3z01QMO3jSVBOVl2wDg6KH03jTTChabjn9RFfzolaSUEPJ61iGVke521ex6WQeU2ELtVmmBtCgS40saOgEpQ5VgkfvZmRUpuKtxWEnA+fKog3q/yefCtq+SbIwo16GikJXilmyEzWDI2FnKjpTW4ziglT27GGEu5Isd3WtwSREzi3TVDD8qG1dh2gKYpuHFIsr7O5aYqoMFbfSwoL4rxRFjpYDyPRfg6XoDFKJRl6nvhOG7YBF5X8xLAsuVa0uS3eWzaD+Z13au0LOBXq+PYq9nTKNRWLhCHJXpoY7YPPzp4e2jhZB9J+97kUaIKsBFrk9f7vrHs8Dl2J3r5cdTqUNfjQ5p2MzCgMiW98ciA3Ccvv1hQdkGRDmmVDsdfWzpgzKga36pGqD0kZnefpqkjH7f9p/S3c3VSmE/eo+E= packer-builder"
+          "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"
         ]
       }
     ]
@@ -43,7 +43,7 @@
         },
         "contents": {
           "compression": "",
-          "source": "data:,ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCpNIhGKpmNvLdRBP6TTjUbv2%2FPcbLbtmLTfswtrZ%2BPxq8yFbrhAnMGovcc0ONvCfJ7aPzJPEqf1L1k4O5KnWH5lozq3z01QMO3jSVBOVl2wDg6KH03jTTChabjn9RFfzolaSUEPJ61iGVke521ex6WQeU2ELtVmmBtCgS40saOgEpQ5VgkfvZmRUpuKtxWEnA%2BfKog3q%2FyefCtq%2BSbIwo16GikJXilmyEzWDI2FnKjpTW4ziglT27GGEu5Isd3WtwSREzi3TVDD8qG1dh2gKYpuHFIsr7O5aYqoMFbfSwoL4rxRFjpYDyPRfg6XoDFKJRl6nvhOG7YBF5X8xLAsuVa0uS3eWzaD%2BZ13au0LOBXq%2BPYq9nTKNRWLhCHJXpoY7YPPzp4e2jhZB9J%2B97kUaIKsBFrk9f7vrHs8Dl2J3r5cdTqUNfjQ5p2MzCgMiW98ciA3Ccvv1hQdkGRDmmVDsdfWzpgzKga36pGqD0kZnefpqkjH7f9p%2FS3c3VSmE%2Feo%2BE%3D%20packer-builder%0A%0A"
+          "source": "data:,ssh-rsa%20AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr%2Bkz4TjGYe7gHzIw%2BniNltGEFHzD8%2Bv1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL%2BGPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm%2BR4LOzFUGaHqHDLKLX%2BFIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ%3D%3D%20vagrant%20insecure%20public%20key%0A%0A"
         },
         "mode": 384
       }
