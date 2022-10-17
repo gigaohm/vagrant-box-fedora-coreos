@@ -22,12 +22,30 @@ If you update it you can generate the `transpiled_config.ign`:
 
 This outputs the Ignition config used in the install. It will be used by packer to perform the [coreos-installer pxe ignition wrap](https://coreos.github.io/coreos-installer/cmd/pxe/#coreos-installer-pxe-ignition-wrap).
 
-## Usage
+## Secrets to upload to Vagrant Cloud
 
-To build a box, you need to run packer.
+Your access token is needed for the Vagrant Cloud API. This can be generated on your [tokens page](https://app.vagrantup.com/settings/security). Populate a `secrets.pkrvars.hcl`:
 
 ```shell
-packer build -var-file="stable.pkrvars.hcl" fedora-coreos.pkr.hcl
+cat << EOF > ./secrets.pkrvars.hcl
+cloud_token = "abc123.atlasv1.xyzabc"
+EOF
+```
+
+## Usage
+
+To build a box, you need to
+
+ - Make sure the box is created https://app.vagrantup.com/gigaohm/boxes/fedora-coreos
+ - Pick your [next version](https://guides.rubygems.org/patterns/#semantic-versioning), e.g. `1.0.0`
+ - Run packer with your local variable for the version number:
+
+```shell
+packer build \
+  -var "box_version=1.0.0" \
+  -var-file="secrets.pkrvars.hcl" \
+  -var-file="stable.pkrvars.hcl" \
+  fedora-coreos.pkr.hcl
 ```
 
 This will download the ISO image (if not already in packer's cache) and will build the box.

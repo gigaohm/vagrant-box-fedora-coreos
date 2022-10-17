@@ -1,3 +1,15 @@
+variable cloud_token {}
+
+variable box_version {
+  type        = string
+  description = "Semantic version for Vagrant Cloud box version"
+
+  validation {
+    condition     = can(regex("(\\d).(\\d).(\\d)", var.box_version))
+    error_message = "The box_version value must be a valid semver."
+  }
+}
+
 variable "iso_url" {
   type        = string
   description = "The URL of the Fedora CoreOS stable ISO image."
@@ -122,5 +134,10 @@ build {
     output               = "${var.build_directory}/${var.os_name}-${var.release}_{{.Provider}}.box"
     provider_override    = "virtualbox"
     vagrantfile_template = "${path.root}/files/vagrantfile"
+  }
+  post-processor "vagrant-cloud" {
+    access_token = "${var.cloud_token}"
+    box_tag      = "hashicorp/precise64"
+    version      = "${var.box_version}"
   }
 }
