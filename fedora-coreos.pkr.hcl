@@ -1,7 +1,31 @@
+variable "iso_url" {
+  type        = string
+  description = "The URL of the Fedora CoreOS stable ISO image."
 
-variable "build_directory" {
+  validation {
+    condition     = can(regex("^https://builds.coreos.fedoraproject.org.*.x86_64.iso", var.iso_url))
+    error_message = "The iso_url value must be a x86_64 Fedora CoreOS ISO URL."
+  }
+}
+
+variable "iso_checksum" {
+  type        = string
+  description = "The checksum of the Fedora CoreOS stable ISO image."
+
+  validation {
+    condition     = length(var.iso_checksum) == 64
+    error_message = "The iso_checksum value must be a checksum of the Fedora CoreOS stable ISO image."
+  }
+}
+
+variable "release" {
   type    = string
-  default = "builds"
+  description = "The Fedora CoreOS release number."
+}
+
+variable "os_name" {
+  type    = string
+  description = "The Fedora CoreOS OS name."
 }
 
 variable "cpus" {
@@ -15,8 +39,8 @@ variable "disk_size" {
 }
 
 variable "headless" {
-  type    = string
-  default = ""
+  type    = bool
+  default = false
 }
 
 variable "http_proxy" {
@@ -37,6 +61,11 @@ variable "memory" {
 variable "no_proxy" {
   type    = string
   default = "${env("no_proxy")}"
+}
+
+variable "build_directory" {
+  type = string
+  default = "builds"
 }
 
 locals {

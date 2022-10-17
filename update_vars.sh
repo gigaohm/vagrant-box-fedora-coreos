@@ -25,5 +25,10 @@ jq \
 
 printf "\nUpdating VARS files\n\n"
 printf "STABLE:\n"
-printf "{\"iso_url\": $stable_location,\"iso_checksum\": $stable_sha256,\"release\": $stable_release,\"os_name\": \"fedora-coreos-stable\"}" \
-| jq . | tee var_stable.json
+printf "iso_url = $stable_location
+iso_checksum = $stable_sha256
+release = $stable_release
+os_name = \"fedora-coreos-stable\"" \
+| tee stable.pkrvars.hcl
+
+printf "\n\nVars file created\n"
