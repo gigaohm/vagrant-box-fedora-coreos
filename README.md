@@ -60,7 +60,7 @@ You might also want to update `stable.pkrvars.hcl` file first, to the latest ver
 You can also add the pre-built boxes in Vagrant:
 
 ```shell
-vagrant box add mihailutasu/fedora-coreos-stable
+vagrant box add gigaohm/fedora-coreos
 ```
 
 ## License
