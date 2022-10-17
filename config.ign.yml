@@ -1,0 +1,32 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: vagrant
+      password_hash: "$y$j9T$fCFtUNXFxxJZlrvRF7AoW/$buUFEAm5VRe0gLP4UR8FLBwqhFvtV9kV9uS/M0FP0x."
+      groups: [ sudo ]
+    - name: core
+      ssh_authorized_keys:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpNIhGKpmNvLdRBP6TTjUbv2/PcbLbtmLTfswtrZ+Pxq8yFbrhAnMGovcc0ONvCfJ7aPzJPEqf1L1k4O5KnWH5lozq3z01QMO3jSVBOVl2wDg6KH03jTTChabjn9RFfzolaSUEPJ61iGVke521ex6WQeU2ELtVmmBtCgS40saOgEpQ5VgkfvZmRUpuKtxWEnA+fKog3q/yefCtq+SbIwo16GikJXilmyEzWDI2FnKjpTW4ziglT27GGEu5Isd3WtwSREzi3TVDD8qG1dh2gKYpuHFIsr7O5aYqoMFbfSwoL4rxRFjpYDyPRfg6XoDFKJRl6nvhOG7YBF5X8xLAsuVa0uS3eWzaD+Z13au0LOBXq+PYq9nTKNRWLhCHJXpoY7YPPzp4e2jhZB9J+97kUaIKsBFrk9f7vrHs8Dl2J3r5cdTqUNfjQ5p2MzCgMiW98ciA3Ccvv1hQdkGRDmmVDsdfWzpgzKga36pGqD0kZnefpqkjH7f9p/S3c3VSmE/eo+E= packer-builder"
+storage:
+  directories:
+    - path: /home/vagrant/.ssh
+      mode: 0700
+      user:
+        name: vagrant
+      group:
+        name: vagrant
+  files:
+    - path: /home/vagrant/.ssh/authorized_keys
+      contents:
+        inline: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpNIhGKpmNvLdRBP6TTjUbv2/PcbLbtmLTfswtrZ+Pxq8yFbrhAnMGovcc0ONvCfJ7aPzJPEqf1L1k4O5KnWH5lozq3z01QMO3jSVBOVl2wDg6KH03jTTChabjn9RFfzolaSUEPJ61iGVke521ex6WQeU2ELtVmmBtCgS40saOgEpQ5VgkfvZmRUpuKtxWEnA+fKog3q/yefCtq+SbIwo16GikJXilmyEzWDI2FnKjpTW4ziglT27GGEu5Isd3WtwSREzi3TVDD8qG1dh2gKYpuHFIsr7O5aYqoMFbfSwoL4rxRFjpYDyPRfg6XoDFKJRl6nvhOG7YBF5X8xLAsuVa0uS3eWzaD+Z13au0LOBXq+PYq9nTKNRWLhCHJXpoY7YPPzp4e2jhZB9J+97kUaIKsBFrk9f7vrHs8Dl2J3r5cdTqUNfjQ5p2MzCgMiW98ciA3Ccvv1hQdkGRDmmVDsdfWzpgzKga36pGqD0kZnefpqkjH7f9p/S3c3VSmE/eo+E= packer-builder\n\n"
+      mode: 0600
+      user:
+        name: vagrant
+      group:
+        name: vagrant
+#systemd:
+#  units:
+##See https://docs.fedoraproject.org/en-US/fedora-coreos/faq/
+#    - name: docker.service
+#      mask: true

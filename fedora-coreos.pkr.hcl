@@ -74,7 +74,7 @@ locals {
 }
 
 source "virtualbox-iso" "fedora-coreos" {
-  boot_command            = ["curl -LO http://{{ .HTTPIP }}:{{ .HTTPPort }}/config.ign.json<enter><wait>", "sudo coreos-installer install /dev/sda --ignition-file config.ign.json && sudo reboot<enter>", "<wait3m>"]
+  boot_command            = ["curl -LO http://{{ .HTTPIP }}:{{ .HTTPPort }}/transpiled_config.ign<enter><wait>", "sudo coreos-installer install /dev/sda --ignition-file transpiled_config.ign && sudo reboot<enter>", "<wait90s>"]
   boot_wait               = "45s"
   cpus                    = "${var.cpus}"
   disk_size               = "${var.disk_size}"
