@@ -3,6 +3,7 @@
 A project for building [Fedora CoreOS](https://getfedora.org/en/coreos?stream=stable) boxes for Vagrant.
 
 Based upon the work from https://github.com/mihailutasu/vagrant-fedora-coreos
+
 ## Requirements
 - [Packer](https://www.packer.io/)
 - [VirtualBox](https://www.virtualbox.org)
@@ -22,6 +23,14 @@ If you update it you can generate the `transpiled_config.ign`:
 
 This outputs the Ignition config used in the install. It will be used by packer to perform the [coreos-installer pxe ignition wrap](https://coreos.github.io/coreos-installer/cmd/pxe/#coreos-installer-pxe-ignition-wrap).
 
+### Latest version of CoreOS
+
+You might also want to update `stable.pkrvars.hcl` file first, to the latest versions:
+
+```shell
+./update_vars.sh
+```
+
 ## Usage
 
 To build a box, you need to run packer.
@@ -32,17 +41,11 @@ packer build -var-file="stable.pkrvars.hcl" fedora-coreos.pkr.hcl
 
 This will download the ISO image (if not already in packer's cache) and will build the box.
 
-You might also want to update `stable.pkrvars.hcl` file first, to the latest versions:
-
-```shell
-./update_vars.sh
-```
-
 ### Using pre-built boxes
 You can also add the pre-built boxes in Vagrant:
 
 ```shell
-vagrant box add mihailutasu/fedora-coreos-stable
+vagrant box add gigaohm/fedora-coreos
 ```
 
 ## License
