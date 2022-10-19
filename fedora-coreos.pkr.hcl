@@ -140,6 +140,12 @@ build {
       access_token = "${var.cloud_token}"
       box_tag      = "gigaohm/fedora-coreos"
       version      = "${var.box_version}"
+      version_description = <<EOF
+Built from https://github.com/gigaohm/vagrant-box-fedora-coreos/tree/vagrant-cloud
+
+os_name: ${var.os_name}
+release: ${var.release}
+EOF
     }
   }
 }
