@@ -143,9 +143,11 @@ build {
       version_description = <<EOF
 Built from https://github.com/gigaohm/vagrant-box-fedora-coreos/tree/vagrant-cloud
 
-os_name: ${var.os_name}
-release: ${var.release}
+os_name: `${var.os_name}`
+
+release: `${var.release}`
 EOF
     }
   }
 }
+
